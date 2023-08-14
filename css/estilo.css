@@ -6,6 +6,7 @@
 /*fondo con una imagen*/
 body{
     background-image: url('/images/bandera.jpg');
+    
 }
 /*para el formulario*/
 .registro{

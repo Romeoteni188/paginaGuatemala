@@ -1,20 +1,19 @@
 <?php
 include("conexion.php");
 $nombre=$_POST['nombre'];
-$apellido=$_POST['apellido'];
 $correo=$_POST['correo'];
-$contrasenia=$_POST['contrasenia'];
+$opci=$_POST['opci'];
 //mensaje
 // $mensaje="Registado el usuario" . $nombre . "\r\n";
 // $mensaje="Registado el apellido" . $apellido . "\r\n";
 // $mensaje="Registado el correo" . $contrasenia . "\r\n";
-
-$sql= "INSERT INTO tbregistro (nombre,apellido,correo,contrasenia)
-VALUES ('$nombre', '$apellido', '$correo','$contrasenia')";
+include("conexion.php");
+$sql= "INSERT INTO tbguatemala (nombre,correo,opci)
+VALUES ('$nombre','$correo','$opci')";
 
 if (mysqli_query($conn, $sql)) {
   echo "Nuevo registro con exito..!";
-  include("login.html");
+  include("/html/index.html");
 } else {
   echo "Error: " . $sql . "<br>" . mysqli_error($conn);
 }
